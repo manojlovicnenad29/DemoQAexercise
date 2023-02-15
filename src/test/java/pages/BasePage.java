@@ -14,4 +14,8 @@ public abstract class BasePage {
         this.driverWait = driverWait;
         PageFactory.initElements(this.driver, this);
     }
+
+    public void toRegistrationPage(){
+        driver.get("http://demoqa.com/registration/");
+    }
 }
