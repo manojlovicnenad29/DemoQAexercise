@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div/div[2]/svg")
+    @FindBy(xpath = "/html/body/div[2]/div/div/div[2]/div/div[1]/div")
     private WebElement elementsButton;
     @FindBy(xpath = "//*[@id=\"app\"]/div/div/div[2]/div/div[2]/div/div[2]/svg")
     private WebElement formsButton;
@@ -51,5 +51,9 @@ public class HomePage extends BasePage {
 
     public WebElement getJoinNowBanner() {
         return joinNowBanner;
+    }
+
+    public void clickElementsButton(){
+        elementsButton.click();
     }
 }

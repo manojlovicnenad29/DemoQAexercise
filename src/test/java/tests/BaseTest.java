@@ -13,18 +13,18 @@ public abstract class BaseTest {
     protected WebDriver driver;
     protected WebDriverWait driverWait;
 
-    protected String baseUrl = "https://demoqa.com/";
+    protected final String BASEURL = "https://demoqa.com";
 
     @BeforeClass
     public void beforeClass() {
         driver = new ChromeDriver();
-        driverWait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @BeforeMethod
     public void beforeMethod() {
-        driver.get(baseUrl);
+        driver.get(BASEURL);
         driver.manage().window().maximize();
     }
 
