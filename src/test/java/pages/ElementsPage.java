@@ -1,6 +1,7 @@
 package pages;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -156,6 +157,27 @@ public class ElementsPage extends BasePage {
         currentAddressBox.sendKeys(faker.address().fullAddress());
         permanentAddressBox.click();
         permanentAddressBox.sendKeys(faker.address().fullAddress());
+        submitButton.click();
+    }
+
+    public void fillTextBoxFirstNameLetter() {
+        textBoxButtonClick();
+        fullNameBox.click();
+        fullNameBox.sendKeys("a");
+        submitButton.click();
+    }
+
+    public void fillTextBoxFirstNameSpecialCharacter() {
+        textBoxButtonClick();
+        fullNameBox.click();
+        fullNameBox.sendKeys(Keys.DECIMAL);
+        submitButton.click();
+    }
+
+    public void fillTextBoxWithJustSpace() {
+        textBoxButtonClick();
+        fullNameBox.click();
+        fullNameBox.sendKeys(Keys.SPACE);
         submitButton.click();
     }
 

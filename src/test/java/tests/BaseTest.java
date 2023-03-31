@@ -18,8 +18,9 @@ public abstract class BaseTest {
     @BeforeClass
     public void beforeClass() {
         driver = new ChromeDriver();
-        driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+
     }
 
     @BeforeMethod

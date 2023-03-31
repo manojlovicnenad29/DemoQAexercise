@@ -24,17 +24,17 @@ public class ElementsTests extends BaseTest {
     public void beforeMethod() {
         super.beforeMethod();
         homePage.clickElementsButton();
-
     }
 
+    //Test every field functionality (filled, blank, special characters, numbers)
     @Test
     public void goToTextBoxPageTest() {
         driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
         elementsPage.textBoxButtonClick();
         Assert.assertTrue(driver.getCurrentUrl().equals("https://demoqa.com/text-box"));
     }
-
     @Test
+    //happy flow
     public void submitTextBox() {
         driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
         elementsPage.fillOutTexBoxForm();
@@ -44,4 +44,33 @@ public class ElementsTests extends BaseTest {
         Assert.assertEquals(elementsPage.getPermanentAddressBox().getText(), elementsPage.getOutputPermanentAddress().getText());
     }
 
+//    @Test
+//    //There is no return message
+//    public void blankTextBox() {
+//        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+//        elementsPage.textBoxButtonClick();
+//        Assert.assertTrue(elementsPage.getOutputName().getText().contains(elementsPage.getFullNameBox().getText()));
+//        Assert.assertTrue(elementsPage.getOutputEmail().getText().contains(elementsPage.getEmailBox().getText()));
+//        Assert.assertEquals(elementsPage.getOutputCurrentAddress().getText(), elementsPage.getCurrentAddressBox().getText());
+//        Assert.assertEquals(elementsPage.getPermanentAddressBox().getText(), elementsPage.getOutputPermanentAddress().getText());
+//    }
+
+    @Test
+    public void fillFirstNameWithLetter() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.fillTextBoxFirstNameLetter();
+        Assert.assertTrue(elementsPage.getOutputName().getText().contains(elementsPage.getFullNameBox().getText()));
+    }
+    @Test
+    public void fillFirstNameWithSpecialCharacter() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.fillTextBoxFirstNameSpecialCharacter();
+        Assert.assertTrue(elementsPage.getOutputName().getText().contains(elementsPage.getFullNameBox().getText()));
+    }
+    @Test
+    public void fillFirstNameWithJustSpace() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.fillTextBoxWithJustSpace();
+        Assert.assertTrue(elementsPage.getOutputName().getText().contains(elementsPage.getFullNameBox().getText()));
+    }
 }
