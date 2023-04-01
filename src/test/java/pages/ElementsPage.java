@@ -180,5 +180,29 @@ public class ElementsPage extends BasePage {
         fullNameBox.sendKeys(Keys.SPACE);
         submitButton.click();
     }
+    public void fillValidEmail() {
+        textBoxButtonClick();
+        emailBox.click();
+        emailBox.sendKeys("example@gmail.com");
+        submitButton.click();
+    }
 
+    public void fillInvalidEmail() {
+        textBoxButtonClick();
+        emailBox.click();
+        emailBox.sendKeys("example");
+        submitButton.click();
+    }
+    public void fillEmailJustWithSpace() {
+        textBoxButtonClick();
+        emailBox.click();
+        emailBox.sendKeys(Keys.SPACE);
+        submitButton.click();
+    }
+    public void fillEmailWithSpecialCharacter() {
+        textBoxButtonClick();
+        emailBox.click();
+        emailBox.sendKeys("example`@gmail.com");
+        submitButton.click();
+    }
 }
