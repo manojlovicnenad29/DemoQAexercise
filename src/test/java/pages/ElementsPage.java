@@ -180,6 +180,7 @@ public class ElementsPage extends BasePage {
         fullNameBox.sendKeys(Keys.SPACE);
         submitButton.click();
     }
+
     public void fillValidEmail() {
         textBoxButtonClick();
         emailBox.click();
@@ -193,16 +194,72 @@ public class ElementsPage extends BasePage {
         emailBox.sendKeys("example");
         submitButton.click();
     }
+
     public void fillEmailJustWithSpace() {
         textBoxButtonClick();
         emailBox.click();
         emailBox.sendKeys(Keys.SPACE);
         submitButton.click();
     }
+
     public void fillEmailWithSpecialCharacter() {
         textBoxButtonClick();
         emailBox.click();
         emailBox.sendKeys("example`@gmail.com");
+        submitButton.click();
+    }
+
+    public void emptyCurrentAddress() {
+        textBoxButtonClick();
+        currentAddressBox.click();
+        submitButton.click();
+    }
+
+    public void fillCurrentAddressWithValidAddress() {
+        textBoxButtonClick();
+        currentAddressBox.click();
+        currentAddressBox.sendKeys("13th Street. 47 W 13th St, New York, NY 10011, USA");
+        submitButton.click();
+    }
+
+    public void fillCurrentAddressWithSpace() {
+        textBoxButtonClick();
+        currentAddressBox.click();
+        currentAddressBox.sendKeys(Keys.SPACE);
+        submitButton.click();
+    }
+
+    public void fillCurrentAddressWithSpecialCharacter() {
+        textBoxButtonClick();
+        currentAddressBox.click();
+        currentAddressBox.sendKeys(Keys.DECIMAL);
+        submitButton.click();
+    }
+
+    public void emptyPermanentAddress() {
+        textBoxButtonClick();
+        permanentAddressBox.click();
+        submitButton.click();
+    }
+
+    public void fillPermanentAddressWithValidAddress() {
+        textBoxButtonClick();
+        permanentAddressBox.click();
+        permanentAddressBox.sendKeys("13th Street. 47 W 13th St, New York, NY 10011, USA");
+        submitButton.click();
+    }
+
+    public void fillPermanentAddressWithSpecialCharacter() {
+        textBoxButtonClick();
+        permanentAddressBox.click();
+        permanentAddressBox.sendKeys(Keys.DECIMAL);
+        submitButton.click();
+    }
+
+    public void fillPermanentAddressWithSpace() {
+        textBoxButtonClick();
+        permanentAddressBox.click();
+        permanentAddressBox.sendKeys(Keys.SPACE);
         submitButton.click();
     }
 }

@@ -105,4 +105,56 @@ public class ElementsTests extends BaseTest {
         Assert.assertTrue(elementsPage.getOutputEmail().getText().contains(elementsPage.getEmailBox().getText()));
     }
 
+    @Test //There is no return message, expected test failure.
+    public void emptyCurrentAddress() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.emptyCurrentAddress();
+        Assert.assertEquals(elementsPage.getOutputCurrentAddress().getText(), elementsPage.getCurrentAddressBox().getText());
+    }
+
+    @Test //There is no return message, expected test failure.
+    public void fillCurrentAddressWithValidAddress() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.fillCurrentAddressWithValidAddress();
+        Assert.assertEquals(elementsPage.getOutputCurrentAddress().getText(), elementsPage.getCurrentAddressBox().getText());
+    }
+
+    @Test //Test passed, can submit empty address!
+    public void fillCurrentAddressWithSpace() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.fillCurrentAddressWithSpace();
+        Assert.assertEquals(elementsPage.getOutputCurrentAddress().getText(), elementsPage.getCurrentAddressBox().getText());
+    }
+
+    @Test
+    public void fillCurrentAddressWithSpecialCharacter() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.fillCurrentAddressWithSpecialCharacter();
+        Assert.assertEquals(elementsPage.getOutputCurrentAddress().getText(), elementsPage.getCurrentAddressBox().getText());
+    }
+
+    @Test
+    public void emptyPermanentAddress() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.emptyPermanentAddress();
+        Assert.assertEquals(elementsPage.getPermanentAddressBox().getText(), elementsPage.getOutputPermanentAddress().getText());
+    }
+    @Test
+    public void fillPermanentAddressWithValidAddress() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.fillPermanentAddressWithValidAddress();
+        Assert.assertEquals(elementsPage.getPermanentAddressBox().getText(), elementsPage.getOutputPermanentAddress().getText());
+    }
+    @Test
+    public void fillPermanentAddressWithSpecialCharacter() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.fillPermanentAddressWithSpecialCharacter();
+        Assert.assertEquals(elementsPage.getPermanentAddressBox().getText(), elementsPage.getOutputPermanentAddress().getText());
+    }
+    @Test
+    public void fillPermanentAddressWithSpace() {
+        driverWait.until(ExpectedConditions.visibilityOf(elementsPage.getTextBoxButton()));
+        elementsPage.fillPermanentAddressWithSpace();
+        Assert.assertEquals(elementsPage.getPermanentAddressBox().getText(), elementsPage.getOutputPermanentAddress().getText());
+    }
 }
